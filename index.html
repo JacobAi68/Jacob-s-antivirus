@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Jacob's Antivirus</title>
+
+<style>
+body {
+  font-family: Arial;
+  background: #0b0f14;
+  color: #00ff9d;
+  text-align: center;
+  padding: 50px;
+}
+
+.card {
+  border: 1px solid #00ff9d;
+  background: #111;
+  padding: 20px;
+  width: 60%;
+  margin: auto;
+}
+
+button {
+  padding: 12px 20px;
+  margin: 10px;
+  background: #00ff9d;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🛡️ Jacob’s Antivirus</h1>
+<p>Official Security Download Page</p>
+
+<div class="card">
+
+  <h2>Select your device</h2>
+
+  <button onclick="download('windows')">Windows</button>
+  <button onclick="download('mac')">Mac</button>
+  <button onclick="download('mobile')">Phone / iPad</button>
+
+  <p id="status"></p>
+
+</div>
+
+<script>
+
+function download(device) {
+
+  document.getElementById("status").innerText =
+    "Preparing " + device + " download...";
+
+  setTimeout(() => {
+
+    let file = "";
+
+    if (device === "windows") {
+      file = "JacobsAntivirus-Windows.exe";
+    }
+
+    if (device === "mac") {
+      file = "JacobsAntivirus-Mac.dmg";
+    }
+
+    if (device === "mobile") {
+      file = "JacobsAntivirus-Mobile.apk";
+    }
+
+    // This triggers download from your GitHub Pages site
+    window.location.href = file;
+
+  }, 1000);
+}
+
+</script>
+
+</body>
+</html>
